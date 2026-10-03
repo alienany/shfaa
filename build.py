@@ -56,8 +56,8 @@ svc_p="Pick a category to see every service, and request any of them on WhatsApp
 gal_p="Designs and services from our pages.",rev_p="The trust of many families is our greatest testimony.",map_t="Covering all of Egypt",map_p="Residence care in every governorate, fast emergency care in Gharbia.",hot="Gharbia (emergency & quick services)",
 cta_t="Need care for your patient?",cta_p="Message us now and our team replies right away.",wa_l="WhatsApp",call="or call",hq="HQ: Qahafa, Tanta, Gharbia",fb="Facebook",ig="Instagram",tt="TikTok",
 back="← Back to home",other="Another service",other_s="Tell us what you need",order="Request →",waother="I would like to request another service",foot="© 2026 Shifa Home Care Center",other_l="العربية",lcode="en",locale="en_US")}
-GOV={"ar":["القاهرة","الجيزة","الإسكندرية","الدقهلية","الشرقية","القليوبية","كفر الشيخ","المنوفية","البحيرة","دمياط","بورسعيد","الإسماعيلية","السويس","الفيوم","بني سويف","المنيا","أسيوط","سوهاج","قنا","الأقصر","أسوان","مطروح","البحر الأحمر","شمال سيناء","جنوب سيناء","الوادي الجديد"],
-"en":["Cairo","Giza","Alexandria","Dakahlia","Sharqia","Qalyubia","Kafr El Sheikh","Monufia","Beheira","Damietta","Port Said","Ismailia","Suez","Fayoum","Beni Suef","Minya","Assiut","Sohag","Qena","Luxor","Aswan","Matrouh","Red Sea","North Sinai","South Sinai","New Valley"]}
+GOV={"ar":["القاهرة","الجيزة","الإسكندرية","مطروح","الساحل الشمالي","شرم الشيخ","المنوفية","الدقهلية","البحيرة","المنصورة","الإسماعيلية","السويس","وجميع محافظات مصر (إقامة منزلية)"],
+"en":["Cairo","Giza","Alexandria","Matrouh","North Coast","Sharm El Sheikh","Monufia","Dakahlia","Beheira","Mansoura","Ismailia","Suez","and all Egyptian governorates (residence care)"]}
 WAI='<svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11 19.8L3 29l6.4-2A13 13 0 1 0 16 3zm7.6 18.4c-.3.9-1.8 1.7-2.5 1.8-.6.1-1.4.1-2.3-.2-2.8-1-4.6-3.3-5.8-5.1-.8-1.2-1.4-2.6-1.2-4 .1-1 .6-1.7 1.1-2.2.3-.3.7-.3 1-.3h.7c.2 0 .5 0 .7.6l1 2.3c.1.2.1.4 0 .6l-.5.7c-.2.2-.3.4-.1.7.7 1.2 1.7 2.2 2.9 2.8.3.2.5.1.7-.1l.8-1c.2-.3.5-.3.8-.2l2.2 1c.3.2.5.2.6.4.1.2.1.8-.1 1.4z"/></svg>'
 def wa(t):return f"https://wa.me/{PHONE}?text={quote(t)}"
 def path(l,k=None):
@@ -101,7 +101,7 @@ def home(l):
 <div class="visual"><div class="ring"></div><div class="ring r2"></div><div class="orb"><img class="ll" src="/assets/logo-light.png" alt="Shifa" width="250" height="250"><img class="ld" src="/assets/logo-dark.png" alt="" width="250" height="250"></div>
 <div class="chip a">{t["chips"][0]}</div><div class="chip b">{t["chips"][1]}</div><div class="chip c">{t["chips"][2]}</div></div></div>
 <svg class="ecg" viewBox="0 0 1200 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40H300l20-28 22 56 20-46 14 18H640l20-28 22 56 20-46 14 18H1200"/></svg></section>
-<div class="stats"><div class="wrap"><div><b data-n="2017">0</b>{t["st"][0]}</div><div><b data-n="27">0</b>{t["st"][1]}</div><div><b data-n="24">0</b>{t["st"][2]}</div><div><b data-n="18" data-s="+">0</b>{t["st"][3]}</div></div></div>
+<div class="stats"><div class="wrap"><div><b data-n="2017">2017</b>{t["st"][0]}</div><div><b data-n="27">27</b>{t["st"][1]}</div><div><b data-n="24">24</b>{t["st"][2]}</div><div><b data-n="18" data-s="+">18+</b>{t["st"][3]}</div></div></div>
 <section id="about" class="about"><div class="wrap"><div class="rv"><div class="box"><img class="ll" src="/assets/logo-light.png" alt="Shifa" loading="lazy"><img class="ld" src="/assets/logo-dark.png" alt="" loading="lazy"></div></div>
 <div class="rv"><h2 style="font-size:2.2rem;font-weight:900;color:var(--navy)">{t["about_t"]}</h2><p style="color:var(--mut);margin-top:10px">{t["about_p"]}</p><ul class="ticks">{"".join(f"<li>{x}</li>" for x in t["ticks"])}</ul></div></div></section>
 <section id="services" class="alt"><div class="wrap"><div class="head rv"><h2>{t["services"]}</h2><p>{t["svc_p"]}</p></div><div class="cats">{cats}</div></div></section>

@@ -111,3 +111,32 @@ footer{padding:34px 0;text-align:center;color:var(--mut);font-size:.9rem}
 .hero .wrap,.about .wrap,.cats{grid-template-columns:1fr}.grid4,.stats .wrap{grid-template-columns:1fr 1fr}
 .hero{padding-top:118px}.visual{min-height:340px}.work{height:340px}.nav .btn{display:none}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+.rv{transform:translateY(18px);transition:opacity .6s,transform .6s}
+@media(max-width:700px){
+body{font-size:15px;line-height:1.65}.wrap{padding:0 16px}html{scroll-padding-top:70px}
+.nav{height:62px;gap:6px}.brand img{height:44px;width:44px}.ib{width:38px;height:38px}
+.links{top:62px;max-height:calc(100vh - 62px);overflow:auto}
+.hero{padding:92px 0 64px}.pill{font-size:.76rem;padding:6px 14px;margin-bottom:14px;line-height:1.5}
+h1{font-size:1.95rem;line-height:1.35}.hero p.lead{font-size:.96rem;margin:12px 0 20px}
+.cta{flex-wrap:nowrap;gap:10px}.cta .btn{flex:1;justify-content:center;padding:12px 8px;font-size:.9rem}
+.visual{min-height:260px;margin-top:4px}.ring{width:240px}.ring.r2{width:186px}.orb{width:182px}
+.chip{font-size:.7rem;padding:5px 10px;border-radius:12px}.chip.c{display:none}.chip.a{top:0;inset-inline-end:2%}.chip.b{bottom:2%;inset-inline-start:2%}
+.ecg{height:44px}
+section{padding:52px 0}.head{margin-bottom:26px}.head h2{font-size:1.55rem}.head p{font-size:.92rem}
+.stats{padding:32px 0}.stats .wrap{gap:12px}.stats b{font-size:1.9rem}.stats .wrap>div{font-size:.82rem;line-height:1.4}
+.about .wrap{gap:26px}.about .box{padding:20px;border-radius:26px}.about .box img{width:44%}.about h2{font-size:1.55rem!important}
+.ticks{font-size:.92rem;gap:8px}
+.cats,.grid4{grid-template-columns:1fr;gap:12px}
+.cat,.card{display:grid;grid-template-columns:52px 1fr;column-gap:14px;row-gap:2px;padding:16px;border-radius:18px;align-items:start}
+.cat .ic,.card .ic{grid-row:span 3;width:52px;height:52px;font-size:26px;margin:0;border-radius:16px}
+.card .ic{grid-row:span 2}
+.cat h3{font-size:1.1rem}.cat p,.card p{font-size:.88rem;line-height:1.55}.card h4{font-size:1rem}.more{font-size:.88rem}
+.rev{width:262px;padding:18px}.work{height:290px}.track{gap:14px}
+.map{gap:8px}.map span{font-size:.8rem;padding:3px 12px}
+details{padding:12px 16px}summary{font-size:.95rem}
+.contact{padding:38px 18px;border-radius:26px}.contact h2{font-size:1.55rem}.contact .btn{font-size:1rem!important;padding:12px 18px}
+.soc a{padding:7px 16px;font-size:.9rem}
+.fab{width:52px;height:52px;bottom:14px}.fab svg{width:28px}
+.page{padding:96px 0 50px}.page h1{font-size:1.6rem!important}.svc{grid-template-columns:1fr;gap:10px}.svc a{padding:13px 14px;font-size:.92rem}
+}
