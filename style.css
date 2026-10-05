@@ -143,3 +143,27 @@ details{padding:12px 16px}summary{font-size:.95rem}
 .orb img{width:78%}
 .brand img{width:auto}
 @media(max-width:700px){.brand img{width:auto;height:46px}}
+
+h1{font-size:clamp(1.8rem,4vw,3.1rem)}
+.tag{font-size:1.25rem;font-weight:800;color:var(--green);margin-top:8px}
+.hero p.lead{margin:10px 0 14px;font-weight:700;color:var(--ink)}
+.bul{list-style:none;display:grid;gap:8px;margin:0 0 24px;max-width:600px}
+.bul li{position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:9px 14px 9px 14px;padding-inline-start:44px;font-size:.93rem;line-height:1.55;color:var(--mut);opacity:0;animation:pop .6s forwards;animation-delay:var(--d)}
+.bul li::before{content:"✔";position:absolute;inset-inline-start:12px;top:9px;width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff;font-size:11px;display:grid;place-items:center}
+@keyframes pop{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.fx{position:absolute;inset:0;z-index:-1;overflow:hidden}
+.fx i{position:absolute;bottom:-40px;font-style:normal;font-weight:900;color:var(--green);opacity:.22;animation:rise 14s linear infinite}
+@keyframes rise{to{transform:translateY(-110vh) rotate(180deg);opacity:0}}
+.chip.a{inset-inline-end:auto;inset-inline-start:50%;margin-inline-start:-90px;top:-2%}
+.tick{overflow:hidden;background:linear-gradient(90deg,var(--blue),var(--green));color:#fff;padding:11px 0;direction:ltr;white-space:nowrap}
+.trk{display:inline-flex;gap:0;animation:scroll 40s linear infinite;width:max-content}
+.trk span{padding:0 22px;font-weight:800;font-size:.95rem}.trk span::after{content:"✚";margin-inline-start:44px;opacity:.7}
+.stats b{font-size:2.4rem}
+.about .sub{margin-top:22px;color:var(--navy);font-size:1.15rem}
+.ticks li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 14px;transition:.3s}.ticks li:hover{border-color:var(--green);transform:translateX(-4px)}
+@media(max-width:700px){
+h1{font-size:1.65rem;line-height:1.4}.tag{font-size:1.05rem}.bul li{font-size:.86rem;padding:8px 12px;padding-inline-start:40px}
+.visual{min-height:330px}.chip{max-width:47%;text-align:center;line-height:1.4;font-size:.7rem}
+.chip.a{top:0;inset-inline-start:50%;margin-inline-start:-23.5%;max-width:47%}.chip.b{bottom:0;inset-inline-start:0}.chip.c{display:block;top:auto;bottom:0;inset-inline-end:0}
+.stats b{font-size:1.8rem}.tick{padding:9px 0}.trk span{font-size:.85rem}
+.about .sub{font-size:1.05rem}.ticks li{font-size:.9rem}}

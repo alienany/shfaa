@@ -9,4 +9,5 @@ var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isInte
 d.querySelectorAll('[data-n]').forEach(function(el){co.observe(el)});
 d.querySelectorAll('.cat,.card').forEach(function(c){c.addEventListener('pointermove',function(e){var q=c.getBoundingClientRect();c.style.setProperty('--mx',e.clientX-q.left+'px');c.style.setProperty('--my',e.clientY-q.top+'px')})});
 d.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){d.getElementById('links').classList.remove('open')})});
+var h=d.querySelector('.hero');if(h&&matchMedia('(pointer:fine)').matches){h.addEventListener('pointermove',function(e){var x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;h.querySelectorAll('.blob').forEach(function(el,i){el.style.translate=(x*40*(i+1))+'px '+(y*30*(i+1))+'px'});var o=h.querySelector('.orb');if(o)o.style.rotate=(x*6)+'deg'})}
 })();
