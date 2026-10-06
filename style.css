@@ -178,3 +178,9 @@ h1 .t2{display:block;background:none;-webkit-background-clip:border-box;backgrou
 @keyframes pulse2{50%{transform:scale(1.35) rotate(90deg)}}
 .hero{padding-top:128px}
 @media(max-width:700px){h1 .t1{font-size:3.5rem}h1 .t2{font-size:1.02rem}.orn{margin:10px 0 4px}.hero{padding:88px 0 56px}.tag{margin-top:2px}.hero p.lead{font-size:.92rem;margin:8px 0 12px}.bul{gap:7px;margin-bottom:18px}}
+@font-face{font-family:BrandFont;src:url(/assets/brand.ttf);font-display:swap}
+h1 .t1{font-family:BrandFont,"Reem Kufi",Cairo,sans-serif}
+[lang=en] h1 .t1{font-family:"Playfair Display",Georgia,serif}
+.hero .wrap>div:first-child{text-align:center}
+.orn{margin-inline:auto}.cta{justify-content:center}
+.hero p.lead{margin-inline:auto}.bul{margin-inline:auto;text-align:start}
