@@ -167,3 +167,14 @@ h1{font-size:1.65rem;line-height:1.4}.tag{font-size:1.05rem}.bul li{font-size:.8
 .chip.a{top:0;inset-inline-start:50%;margin-inline-start:-23.5%;max-width:47%}.chip.b{bottom:0;inset-inline-start:0}.chip.c{display:block;top:auto;bottom:0;inset-inline-end:0}
 .stats b{font-size:1.8rem}.tick{padding:9px 0}.trk span{font-size:.85rem}
 .about .sub{font-size:1.05rem}.ticks li{font-size:.9rem}}
+h1{line-height:1.15}
+h1 .b1{display:block;font-family:"Reem Kufi",Cairo,sans-serif;font-weight:700;font-size:clamp(3.6rem,9vw,6.6rem);line-height:1.15;letter-spacing:.01em;filter:drop-shadow(0 10px 26px rgba(30,111,217,.35))}
+[lang=en] h1 .b1{font-family:"Playfair Display",Georgia,serif;font-weight:800;letter-spacing:.02em}
+h1 .b2{display:block;background:none;-webkit-background-clip:border-box;background-clip:border-box;-webkit-text-fill-color:currentColor;color:var(--navy);animation:none;font-size:clamp(1.05rem,2.3vw,1.6rem);font-weight:800;letter-spacing:.04em;margin-top:2px}
+[lang=en] h1 .b2{font-size:clamp(.95rem,2vw,1.25rem);letter-spacing:.14em;text-transform:uppercase}
+.orn{display:flex;align-items:center;gap:14px;margin:14px 0 6px;max-width:420px}
+.orn i{flex:1;height:2px;border-radius:2px;background:linear-gradient(90deg,transparent,var(--green))}.orn i:last-child{background:linear-gradient(270deg,transparent,var(--blue))}
+.orn b{color:var(--green);font-size:1.1rem;animation:pulse2 2.4s ease-in-out infinite}
+@keyframes pulse2{50%{transform:scale(1.35) rotate(90deg)}}
+.hero{padding-top:128px}
+@media(max-width:700px){h1 .b1{font-size:3.5rem}h1 .b2{font-size:1.02rem}.orn{margin:10px 0 4px}.hero{padding:88px 0 56px}.tag{margin-top:2px}.hero p.lead{font-size:.92rem;margin:8px 0 12px}.bul{gap:7px;margin-bottom:18px}}

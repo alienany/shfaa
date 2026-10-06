@@ -70,6 +70,8 @@ st=("Serving since","Home residence cases","Available 24 hours, 7 days a week","
 about_ps=("Shifa delivers complete healthcare and quality at home, providing every service without moving the patient or exposing them to infection, falls and complications.","Shifa relies on an elite team of nursing specialists across departments: intensive care, emergency, pediatrics, neonatal, critical cases and elderly care.","Experienced in home healthcare since 2017, we provide residence care in all Egyptian governorates, and emergency and quick services in Gharbia and nearby areas."),
 care_t="Home care from Shifa",care=("Comprehensive healthcare for the patient.","Reduced infection risk, including hospital-acquired infections.","Intensive nursing that protects against pressure ulcers and aspiration pneumonia.","Proper care for cancer, liver failure and low-immunity patients (special care).","Complete care for coma and stroke patients.","Care for the elderly and people with special needs."),
 ticker=("Home nursing","ICU care at home","Wound dressing","Pressure ulcers & vacuum","Elderly care","24h residence care","Blood & IV therapy","Home labs & imaging","Physiotherapy & nutrition")))
+T["ar"].update(brand1="مركز شفا",brand2="للرعاية الطبية والتمريضية")
+T["en"].update(brand1="Shifa",brand2="Medical & Nursing Home Care Center")
 GOV={"ar":["القاهرة","الجيزة","الإسكندرية","مطروح","الساحل الشمالي","شرم الشيخ","المنوفية","الدقهلية","البحيرة","المنصورة","الإسماعيلية","السويس","وجميع محافظات مصر (إقامة منزلية)"],
 "en":["Cairo","Giza","Alexandria","Matrouh","North Coast","Sharm El Sheikh","Monufia","Dakahlia","Beheira","Mansoura","Ismailia","Suez","and all Egyptian governorates (residence care)"]}
 WAI='<svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11 19.8L3 29l6.4-2A13 13 0 1 0 16 3zm7.6 18.4c-.3.9-1.8 1.7-2.5 1.8-.6.1-1.4.1-2.3-.2-2.8-1-4.6-3.3-5.8-5.1-.8-1.2-1.4-2.6-1.2-4 .1-1 .6-1.7 1.1-2.2.3-.3.7-.3 1-.3h.7c.2 0 .5 0 .7.6l1 2.3c.1.2.1.4 0 .6l-.5.7c-.2.2-.3.4-.1.7.7 1.2 1.7 2.2 2.9 2.8.3.2.5.1.7-.1l.8-1c.2-.3.5-.3.8-.2l2.2 1c.3.2.5.2.6.4.1.2.1.8-.1 1.4z"/></svg>'
@@ -87,7 +89,7 @@ def head(l,k,title,desc,ld):
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{E_(title)}"><meta name="twitter:description" content="{E_(desc)}"><meta name="twitter:image" content="{DOMAIN}/assets/og.jpg">
 <link rel="icon" href="/assets/favicon.png"><link rel="apple-touch-icon" href="/assets/icon-192.png"><link rel="manifest" href="/manifest.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&family=Poppins:wght@400;600;800&family=Reem+Kufi:wght@700&family=Playfair+Display:wght@800&display=swap" rel="stylesheet">
 <script>try{{var s=localStorage.getItem('theme');document.documentElement.dataset.theme=s||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}}catch(e){{document.documentElement.dataset.theme='light'}}</script>
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">{json.dumps(ld,ensure_ascii=False)}</script></head><body><div id="bar"></div>'''
@@ -113,7 +115,7 @@ def home(l):
     gov="".join(f'<span>{x}</span>' for x in GOV[l])
     faq="".join(f'<details class="rv"><summary>{f[0+2*i]}</summary><p>{f[1+2*i]}</p></details>' for f in FAQ)
     return head(l,None,t["title"],t["desc"],ld)+header(l,None)+f'''<main><section class="hero"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="dots"></div><div class="fx" aria-hidden="true">{fx}</div><div class="wrap">
-<div><span class="pill"><i></i>{t["pill"]}</span><h1><span>{t["brand"]}</span></h1><p class="tag">{t["tag"]}</p><p class="lead">{t["intro"]}</p><ul class="bul">{bul}</ul>
+<div><h1><span class="b1">{t["brand1"]}</span><span class="b2">{t["brand2"]}</span></h1><div class="orn" aria-hidden="true"><i></i><b>✚</b><i></i></div><p class="tag">{t["tag"]}</p><p class="lead">{t["intro"]}</p><ul class="bul">{bul}</ul>
 <div class="cta"><a class="btn g" href="{wa(t["waq"])}" target="_blank" rel="noopener">{t["req"]}</a><a class="btn o" href="#services">{t["browse"]}</a></div></div>
 <div class="visual"><div class="ring"></div><div class="ring r2"></div><div class="orb"><img class="ll" src="/assets/logo-light.png" alt="Shifa" width="250" height="250"><img class="ld" src="/assets/logo-dark.png" alt="" width="250" height="250"></div>
 <div class="chip a">{t["chips"][0]}</div><div class="chip b">{t["chips"][1]}</div><div class="chip c">{t["chips"][2]}</div></div></div>
