@@ -91,7 +91,7 @@ def head(l,k,title,desc,ld):
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&family=Poppins:wght@400;600;800&family=Reem+Kufi:wght@700&family=Playfair+Display:wght@800&display=swap" rel="stylesheet">
 <script>try{{var s=localStorage.getItem('theme');document.documentElement.dataset.theme=s||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}}catch(e){{document.documentElement.dataset.theme='light'}}</script>
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/style-{t["dir"]}.css">
 <script type="application/ld+json">{json.dumps(ld,ensure_ascii=False)}</script></head><body><div id="bar"></div>'''
 def header(l,k):
     t=T[l];o="en" if l=="ar" else "ar";b=path(l)
@@ -157,3 +157,16 @@ open("robots.txt","w").write(f"User-agent: *\nAllow: /\nSitemap: {DOMAIN}/sitema
 open("manifest.webmanifest","w",encoding="utf-8").write(json.dumps({"name":"شفا للرعاية المنزلية","short_name":"شفا","start_url":"/","display":"standalone","background_color":"#ffffff","theme_color":"#0b2a5b","lang":"ar","dir":"rtl","icons":[{"src":"/assets/icon-192.png","sizes":"192x192","type":"image/png"},{"src":"/assets/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}]},ensure_ascii=False))
 open("vercel.json","w").write(json.dumps({"cleanUrls":False,"trailingSlash":True,"headers":[{"source":"/assets/(.*)","headers":[{"key":"Cache-Control","value":"public, max-age=31536000, immutable"}]},{"source":"/(.*)","headers":[{"key":"X-Content-Type-Options","value":"nosniff"},{"key":"Referrer-Policy","value":"strict-origin-when-cross-origin"}]}]}))
 print("built",len(urls),"pages")
+
+# ---- توليد ملفات CSS متوافقة (فيزيائية بدل logical) لكل اتجاه ----
+import re
+def gen(d):
+    s=open("style.css",encoding="utf-8").read()
+    st,en=("right","left") if d=="rtl" else ("left","right")
+    s=s.replace("inset-inline-start:",st+":").replace("inset-inline-end:",en+":").replace("inset-inline:0","left:0;right:0")
+    s=s.replace("inset:0 0 auto 0","top:0;right:0;left:0");s=re.sub(r"inset:0(?=[;}])","top:0;right:0;bottom:0;left:0",s)
+    s=s.replace("margin-inline-start:","margin-"+st+":").replace("margin-inline-end:","margin-"+en+":").replace("padding-inline-start:","padding-"+st+":").replace("margin-inline:auto","margin-left:auto;margin-right:auto")
+    s=re.sub(r"font-size:clamp\(([^,]+),([^,]+),([^)]+)\)",lambda m:f"font-size:{m.group(3)};font-size:clamp({m.group(1)},{m.group(2)},{m.group(3)})",s)
+    s=re.sub(r"(?<![-\w])(width|height):min\(([^,;}]+),([^)]+)\)",lambda m:f"{m.group(1)}:{m.group(2)};{m.group(1)}:min({m.group(2)},{m.group(3)})",s)
+    open(f"style-{d}.css","w",encoding="utf-8").write(s)
+gen("rtl");gen("ltr")
